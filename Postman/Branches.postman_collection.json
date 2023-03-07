@@ -1,0 +1,221 @@
+{
+	"info": {
+		"_postman_id": "5cb0969a-bf76-4c1c-b293-9492a0562484",
+		"name": "Branches",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17495888"
+	},
+	"item": [
+		{
+			"name": "get branches",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/branch",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"branch"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "show branch",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/branch/1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"branch",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete branch",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/branch/delete/1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"branch",
+						"delete",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "store branch",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "account",
+							"value": "kjjhjkh887",
+							"type": "text"
+						},
+						{
+							"key": "number",
+							"value": "8888888",
+							"type": "text"
+						},
+						{
+							"key": "beneficiary",
+							"value": "888888",
+							"type": "text"
+						},
+						{
+							"key": "iban",
+							"value": "jhjh8889889",
+							"type": "text"
+						},
+						{
+							"key": "photo",
+							"value": "kkjxhkxmnc",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/branch/store",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"branch",
+						"store"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update branch",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "account",
+							"value": "kjjhjkh887",
+							"type": "text"
+						},
+						{
+							"key": "number",
+							"value": "8888888",
+							"type": "text"
+						},
+						{
+							"key": "beneficiary",
+							"value": "888888",
+							"type": "text"
+						},
+						{
+							"key": "iban",
+							"value": "jhjh8889889",
+							"type": "text"
+						},
+						{
+							"key": "photo",
+							"value": "kkjxhkxmnc",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/branch/update/1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"branch",
+						"update",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
