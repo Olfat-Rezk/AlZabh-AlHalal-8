@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\Admin\AuthinticationController as AdminAuth;
+use App\Http\Controllers\User\AuthinticationController as UserAuth;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\loginController;
@@ -80,5 +83,21 @@ Route::prefix('branch')->group(function(){
 
     Route::delete('delete/{id}',[BranchController::class,'destroy']);
 
+
+});
+
+Route::post('register',[AdminAuth::class,'register']);
+
+Route::middleware('auth::admin-api')->group(function(){
+    Route::post('login',[AdminAuth::class,'login']);
+
+    Route::post('logout',[AdminAuth::class,'logout']);
+
+});
+
+Route::middleware('auth::user-api')->group(function(){
+    Route::post('login',[UserAuth::class,'login']);
+
+    Route::post('logout',[UserAuth::class,'logout']);
 
 });
