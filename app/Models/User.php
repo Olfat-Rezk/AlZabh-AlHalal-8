@@ -9,6 +9,7 @@ class User extends Model
 {
 
     protected $table = 'users';
+    protected $guard = 'user-api';
     public $timestamps = true;
     protected $fillable = array('name', 'phone', 'email', 'district', 'city');
 

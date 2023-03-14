@@ -41,8 +41,8 @@ class AuthinticationController extends Controller
 
         try {
             $rules = [
-                "email" => "required",
-                "password" => "required"
+                "name" => "required",
+                "phone" => "required"
 
             ];
 
@@ -55,7 +55,7 @@ class AuthinticationController extends Controller
 
             //login
 
-            $credentials = $request->only(['email', 'password']);
+            $credentials = $request->only(['name', 'phone']);
 
             $token = Auth::guard('admin-api')->attempt($credentials);
 

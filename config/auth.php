@@ -46,9 +46,9 @@ return [
             'provider' => 'user-api',
             'hash' => false,
         ],
-        'admin-api' => [
+        'admin' => [
             'driver' => 'token',
-            'provider' => 'admin-api',
+            'provider' => 'admins',
             'hash' => false,
         ],
     ],
@@ -76,7 +76,7 @@ return [
             'model' => App\Models\User::class,
         ],
 
-        'users' => [
+        'user-api' => [
             'driver' => 'database',
             'table' => 'users',
         ],

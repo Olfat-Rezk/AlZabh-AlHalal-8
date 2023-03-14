@@ -9,7 +9,9 @@ use App\Http\Controllers\Api\loginController;
 use App\Http\Controllers\Api\BranchController;
 use App\Http\Controllers\Api\AccountController;
 use App\Http\Controllers\Api\CategoryContoller;
+use App\Http\Controllers\Api\OfferController;
 use App\Http\Controllers\Api\PackingController;
+use App\Http\Controllers\Api\ProductController;
 use App\Http\Controllers\Api\ShredderController;
 
 /*
@@ -88,16 +90,35 @@ Route::prefix('branch')->group(function(){
 
 Route::post('register',[AdminAuth::class,'register']);
 
-Route::middleware('auth::admin-api')->group(function(){
-    Route::post('login',[AdminAuth::class,'login']);
-
+Route::middleware('auth:admin')->group(function(){
+    Route::post('admin/login',[AdminAuth::class,'login']);
     Route::post('logout',[AdminAuth::class,'logout']);
-
 });
 
-Route::middleware('auth::user-api')->group(function(){
+Route::middleware('auth.guard:user-api')->group(function(){
     Route::post('login',[UserAuth::class,'login']);
 
     Route::post('logout',[UserAuth::class,'logout']);
 
 });
+
+
+Route::prefix('products')->group(function(){
+    Route::post('/{category_id}',[ProductController::class,'index']);//show all
+    Route::post('/{id}',[ProductController::class,'show']);
+    Route::post('/store',[ProductController::class,'store']);
+    Route::post('/update/{id}',[ProductController::class,'update']);
+    Route::post('/delete/{id}',[ProductController::class,'destroy']);
+});
+
+
+Route::prefix('offers')->group(function(){
+    Route::get('/',[OfferController::class,'index']);
+    Route::get('/{id}',[OfferController::class,'show']);
+    Route::post('/store',[OfferController::class,'store']);
+    Route::post('/delete/{id}',[OfferController::class,'destroy']);
+
+}
+
+
+);

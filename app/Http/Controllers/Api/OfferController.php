@@ -4,9 +4,12 @@ namespace App\Http\Controllers\Api;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Offer;
+use App\Traits\GeneralTrait;
 
 class OfferController extends Controller
 {
+    use GeneralTrait;
 
   /**
    * Display a listing of the resource.
@@ -15,6 +18,15 @@ class OfferController extends Controller
    */
   public function index()
   {
+    try{
+        $offers = Offer::all();
+    return $this->returnData('offers',$offers);
+
+    }catch(\Exception $e){
+        return $this->returnError($e->getCode(),$e->getMessage());
+
+    }
+
 
   }
 
@@ -23,18 +35,25 @@ class OfferController extends Controller
    *
    * @return Response
    */
-  public function create()
-  {
 
-  }
 
-  /**
-   * Store a newly created resource in storage.
-   *
-   * @return Response
-   */
   public function store(Request $request)
   {
+    try{
+        $validated = $request->validate([
+            'name'=>'required|string|min:3',
+            'percent'=>'required',
+            'expirationn_date'=>'nullable|date'
+        ]);
+        $offer = Offer::create($validated);
+        return $this->returnData('offers',$offer);
+
+
+    }catch(\Exception $e){
+       return $this->returnError($e->getCode(),$e->getMessage());
+
+    }
+
 
   }
 
@@ -46,6 +65,14 @@ class OfferController extends Controller
    */
   public function show($id)
   {
+    try{
+        $offer = Offer::findOrFail($id);
+        return $this->returnData('offer', $offer);
+
+    }catch(\Exception $e){
+        return $this->returnError($e->getCode(),$e->getMessage());
+    }
+
 
   }
 
@@ -55,17 +82,7 @@ class OfferController extends Controller
    * @param  int  $id
    * @return Response
    */
-  public function edit($id)
-  {
 
-  }
-
-  /**
-   * Update the specified resource in storage.
-   *
-   * @param  int  $id
-   * @return Response
-   */
   public function update($id)
   {
 
@@ -79,6 +96,15 @@ class OfferController extends Controller
    */
   public function destroy($id)
   {
+    try{
+        $offer = Offer::findOrFail($id);
+        $offer->delete();
+
+    }catch(\Exception $e){
+        return $this->returnError($e->getCode(),$e->getMessage());
+
+
+    }
 
   }
 

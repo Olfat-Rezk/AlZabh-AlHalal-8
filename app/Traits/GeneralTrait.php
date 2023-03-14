@@ -29,11 +29,11 @@ trait GeneralTrait
         ];
     }
 
-    public function returnData($key, $value, $msg = "")
+    public function returnData($key, $value, $msg = "" , $error = 0)
     {
         return response()->json([
             'status' => true,
-            'errNum' => "S000",
+            'errNum' => $error,
             'msg' => $msg,
             $key => $value
         ]);
