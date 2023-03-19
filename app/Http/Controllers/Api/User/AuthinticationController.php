@@ -12,29 +12,29 @@ use Illuminate\Support\Facades\Validator;
 class AuthinticationController extends Controller
 {
     use GeneralTrait;
-    // public function register(Request $request){
-    //     $rules=[
+    public function register(Request $request){
+        $rules=[
 
-    //             'phone'=>'required|string',
-    //             'email'=>'required|string|email|unique:users|max:200',
-    //             'password'=>'required|strin|min:6',
-    //             'city'=>'required|string|exist:users',
-    //             'district'=>'required|string'
+                'phone'=>'required|string',
+                'email'=>'required|string|email|unique:users|max:200',
+                'password'=>'required|strin|min:6',
+                'city'=>'required|string|exist:users',
+                'district'=>'required|string'
 
-    //         ];
-    //         $validated = Validator::make($request->all(),$rules);
-    //         if($validated->fails()){
-    //             return response()->json($validated->errors()
-    //                 );
-    //         }
+            ];
+            $validated = Validator::make($request->all(),$rules);
+            if($validated->fails()){
+                return response()->json($validated->errors()
+                    );
+            }
 
-    //     $user =User::create($request->all());
-    //     $token = $user->createToken();
-    //     return response()->json([
-    //         'user' => $user ,
-    //         'token'=>$token
-    //     ]);
-    // }
+        $user =User::create($request->all());
+        $token = $user->createToken();
+        return response()->json([
+            'user' => $user ,
+            'token'=>$token
+        ]);
+    }
 
     public function login(Request $request)
     {

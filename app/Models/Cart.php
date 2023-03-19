@@ -10,10 +10,10 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Cart extends Model
 {
     use SoftDeletes;
-    
+
     protected $table = 'cart';
     public $timestamps = true;
-    protected $fillabe =array('user_id','product_id','cart_id') ;
+    protected $fillabe =array('user_id','product_id','cart_id','quantity') ;
 
     public function products()
     {

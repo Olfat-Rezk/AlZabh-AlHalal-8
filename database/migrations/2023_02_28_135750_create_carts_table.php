@@ -14,6 +14,7 @@ class CreateCartsTable extends Migration {
 			$table->timestamps();
 			$table->foreignId('product_id');
 			$table->foreignId('user_id');
+            $table->integer('quantity');
             //$table->unique(['cart_id','product_id']);
             $table->softDeletes();
 		});

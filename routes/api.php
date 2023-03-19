@@ -1,18 +1,21 @@
 <?php
 
-use App\Http\Controllers\Admin\AuthinticationController as AdminAuth;
-use App\Http\Controllers\User\AuthinticationController as UserAuth;
-
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+
+
+use App\Http\Controllers\Api\CartController;
 use App\Http\Controllers\Api\loginController;
+use App\Http\Controllers\Api\OfferController;
+use App\Http\Controllers\Api\OrderController;
 use App\Http\Controllers\Api\BranchController;
 use App\Http\Controllers\Api\AccountController;
 use App\Http\Controllers\Api\CategoryContoller;
-use App\Http\Controllers\Api\OfferController;
 use App\Http\Controllers\Api\PackingController;
 use App\Http\Controllers\Api\ProductController;
 use App\Http\Controllers\Api\ShredderController;
+//use App\Http\Controllers\Api\User\AuthinticationController as UserAuth;
+use App\Http\Controllers\Admin\AuthinticationController ;
 
 /*
 |--------------------------------------------------------------------------
@@ -88,18 +91,11 @@ Route::prefix('branch')->group(function(){
 
 });
 
-Route::post('register',[AdminAuth::class,'register']);
+Route::post('register',[AuthinticationController::class,'register'])->name('admin/register');
 
 Route::middleware('auth:admin')->group(function(){
-    Route::post('admin/login',[AdminAuth::class,'login']);
-    Route::post('logout',[AdminAuth::class,'logout']);
-});
-
-Route::middleware('auth.guard:user-api')->group(function(){
-    Route::post('login',[UserAuth::class,'login']);
-
-    Route::post('logout',[UserAuth::class,'logout']);
-
+    Route::post('admin/login',[AuthinticationController::class,'login']);
+    Route::post('logout',[AuthinticationController::class,'logout']);
 });
 
 
@@ -118,7 +114,25 @@ Route::prefix('offers')->group(function(){
     Route::post('/store',[OfferController::class,'store']);
     Route::post('/delete/{id}',[OfferController::class,'destroy']);
 
-}
+});
 
 
-);
+
+Route::prefix('cart')->group(function(){
+    Route::get('/',[CartController::class,'index']);
+    Route::get('/{id}',[CartController::class,'show']);
+    Route::post('/store',[CartController::class,'store']);
+    Route::post('/delete/{id}',[CartController::class,'destroy']);
+    Route::post('addProduct',[CartController::class,'addProduct']);
+    Route::post('checkout',[CartController::class,'checkout']);
+
+
+});
+
+Route::prefix('orders')->group(function(){
+    Route::get('/',[OrderController::class,'index']);
+    Route::get('/{id}',[OrderController::class,'show']);
+    Route::post('/store',[OrderController::class,'store']);
+    Route::post('/delete/{id}',[OrderController::class,'destroy']);
+
+});
