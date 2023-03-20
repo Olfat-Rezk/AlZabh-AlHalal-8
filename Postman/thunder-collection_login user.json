@@ -1,0 +1,75 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "login user",
+    "dateExported": "2023-03-20T19:51:04.790Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "2fbea506-abe9-40d4-b6eb-8ad5428d61ba",
+            "colId": "472a84ce-0b66-4817-8aae-d9ce7f74a6ba",
+            "containerId": "",
+            "name": "login user",
+            "url": "http://127.0.0.1:8000/userApi/user/login",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2023-03-19T10:05:06.118Z",
+            "modified": "2023-03-20T11:12:07.482Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"email\":\"i212okkkoou@gmail.com\",\n   \"password\":\"123456789\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "6a4bd33e-9aec-4f0b-9d6e-fdc5e6c119ba",
+            "colId": "472a84ce-0b66-4817-8aae-d9ce7f74a6ba",
+            "containerId": "",
+            "name": "logout",
+            "url": "http://127.0.0.1:8000/userApi/user/logout",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2023-03-19T10:05:06.135Z",
+            "modified": "2023-03-20T10:01:49.034Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "ee8593119e9268bb293464122089eb7d27d6901d5525f6ab987e7e43039046f788b744a5572dd129"
+            },
+            "tests": []
+        },
+        {
+            "_id": "693e1fa6-9da1-4277-8f09-597eda07b487",
+            "colId": "472a84ce-0b66-4817-8aae-d9ce7f74a6ba",
+            "containerId": "",
+            "name": "register user",
+            "url": "http://127.0.0.1:8000/userApi/user/register",
+            "method": "POST",
+            "sortNum": 40000,
+            "created": "2023-03-19T11:32:09.171Z",
+            "modified": "2023-03-20T11:11:53.393Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\":\"ooyyooo\",\n  \"phone\":\"01246700001\",\n  \"email\":\"i212okkkoou@gmail.com\",\n \"password\":\"123456789\",\n \"district\":\"iuikjkj\"\n}",
+                "form": []
+            },
+            "tests": []
+        }
+    ]
+}

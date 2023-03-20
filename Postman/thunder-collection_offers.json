@@ -1,0 +1,121 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "offers",
+    "dateExported": "2023-03-20T19:52:02.019Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "6e80dfde-8dfe-46c1-ab91-9b0982b80b13",
+            "colId": "f799b55d-232b-4fc0-97f2-835e5c95253f",
+            "containerId": "",
+            "name": "all offers",
+            "url": "http://127.0.0.1:8000/api/offers",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2023-03-14T10:46:43.547Z",
+            "modified": "2023-03-14T10:50:33.024Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "c9e89c1c-e1b8-4ecc-b542-22ed95ab85a0",
+            "colId": "f799b55d-232b-4fc0-97f2-835e5c95253f",
+            "containerId": "",
+            "name": "show offer",
+            "url": "http://127.0.0.1:8000/api/offers/delete/1",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2023-03-14T10:52:57.058Z",
+            "modified": "2023-03-14T11:17:16.673Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "be4c43e0-51f6-43c6-b4d1-37d820a2587c",
+            "colId": "f799b55d-232b-4fc0-97f2-835e5c95253f",
+            "containerId": "",
+            "name": "store offer ",
+            "url": "http://127.0.0.1:8000/api/offers/store",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2023-03-14T10:55:29.054Z",
+            "modified": "2023-03-14T11:12:49.774Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "formdata",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "name",
+                        "value": "offer 8"
+                    },
+                    {
+                        "name": "percent",
+                        "value": "22"
+                    },
+                    {
+                        "name": "expirationn_date",
+                        "value": "2023-03-21"
+                    }
+                ]
+            },
+            "tests": []
+        },
+        {
+            "_id": "d59c691d-675f-42cd-8f42-3a31ca02ff85",
+            "colId": "f799b55d-232b-4fc0-97f2-835e5c95253f",
+            "containerId": "",
+            "name": "delete offer  ",
+            "url": "http://127.0.0.1:8000/api/offers/delete/1",
+            "method": "POST",
+            "sortNum": 40000,
+            "created": "2023-03-14T11:16:33.335Z",
+            "modified": "2023-03-20T10:09:58.848Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "formdata",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "name",
+                        "value": "offer 8"
+                    },
+                    {
+                        "name": "percent",
+                        "value": "22"
+                    },
+                    {
+                        "name": "expirationn_date",
+                        "value": "2023-03-21"
+                    }
+                ]
+            },
+            "tests": []
+        }
+    ]
+}

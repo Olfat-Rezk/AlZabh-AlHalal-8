@@ -1,0 +1,113 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "cart",
+    "dateExported": "2023-03-20T19:52:11.447Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "ae4773fd-1e27-400d-b4b9-a7a33841ce7b",
+            "colId": "58fbc039-f664-4c01-b5ea-5473e69d3c7b",
+            "containerId": "",
+            "name": "all carts",
+            "url": "http://127.0.0.1:8000/api/cart",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2023-03-19T08:46:19.167Z",
+            "modified": "2023-03-19T08:47:49.314Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "2901ec99-43d0-4c00-8f35-2ac273678e26",
+            "colId": "58fbc039-f664-4c01-b5ea-5473e69d3c7b",
+            "containerId": "",
+            "name": "show cart",
+            "url": "http://127.0.0.1:8000/api/cart/1",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2023-03-19T08:53:48.794Z",
+            "modified": "2023-03-19T08:59:37.753Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "ee1bd3a2-6088-40dd-a0b1-0d66436c618d",
+            "colId": "58fbc039-f664-4c01-b5ea-5473e69d3c7b",
+            "containerId": "",
+            "name": "store cart",
+            "url": "http://127.0.0.1:8000/api/cart",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2023-03-19T08:56:52.600Z",
+            "modified": "2023-03-19T08:56:52.600Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "babfed74-d77d-4b4f-a7e5-0cff1607b392",
+            "colId": "58fbc039-f664-4c01-b5ea-5473e69d3c7b",
+            "containerId": "",
+            "name": "delete cart ",
+            "url": "http://127.0.0.1:8000/api/cart",
+            "method": "GET",
+            "sortNum": 40000,
+            "created": "2023-03-19T08:57:26.319Z",
+            "modified": "2023-03-19T08:57:26.319Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "44c70d04-2766-4074-8f1c-fabb86f39b5f",
+            "colId": "58fbc039-f664-4c01-b5ea-5473e69d3c7b",
+            "containerId": "",
+            "name": "addProduct to cart  ",
+            "url": "http://127.0.0.1:8000/api/cart/addProduct",
+            "method": "POST",
+            "sortNum": 50000,
+            "created": "2023-03-19T08:58:02.568Z",
+            "modified": "2023-03-19T09:12:19.857Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"product_id\":1,\n  \"quantity\":2\n  \n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "bfef2af1-716a-4893-a96a-58bce4a85393",
+            "colId": "58fbc039-f664-4c01-b5ea-5473e69d3c7b",
+            "containerId": "",
+            "name": "checkout to cart   ",
+            "url": "http://127.0.0.1:8000/api/cart/checkout",
+            "method": "POST",
+            "sortNum": 60000,
+            "created": "2023-03-19T08:58:35.375Z",
+            "modified": "2023-03-19T09:17:57.876Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\":\"olfat\",\n  \"phone\":\"0123456789\",\n  \"district\":\"uyuyuyu\",\n  \"city\":\"loklkl\"\n}",
+                "form": []
+            },
+            "tests": []
+        }
+    ]
+}

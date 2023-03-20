@@ -1,0 +1,76 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "login admin",
+    "dateExported": "2023-03-20T19:51:46.339Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "61b5cde1-23b7-4e8e-b40b-61a37014fa48",
+            "colId": "290f298b-3544-4f07-bacb-9e54b98078e7",
+            "containerId": "",
+            "name": "login admin",
+            "url": "http://127.0.0.1:8000/api/admin/login",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2023-03-14T08:52:55.015Z",
+            "modified": "2023-03-20T10:14:50.127Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \n  \"phone\":\"012346567\"\n  \n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "49afad20-3b21-4aa9-a2ae-4c0e3230c86a",
+            "colId": "290f298b-3544-4f07-bacb-9e54b98078e7",
+            "containerId": "",
+            "name": "logout",
+            "url": "http://127.0.0.1:8000/api/admin/logout",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2023-03-14T10:05:34.756Z",
+            "modified": "2023-03-14T10:06:10.118Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "31063437-b3ba-4903-be10-ab4bae4cd31b",
+            "colId": "290f298b-3544-4f07-bacb-9e54b98078e7",
+            "containerId": "",
+            "name": "register",
+            "url": "http://127.0.0.1:8000/api/admin/register",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2023-03-14T10:06:39.420Z",
+            "modified": "2023-03-20T08:26:50.615Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\":\"olfat\",\n  \"phone\":\"012346567\"\n  \n}",
+                "form": []
+            },
+            "tests": []
+        }
+    ]
+}
