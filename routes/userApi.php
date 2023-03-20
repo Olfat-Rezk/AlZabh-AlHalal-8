@@ -25,12 +25,11 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::post('user/register',[AuthinticationController::class,'register']);
 
+Route::post('user/login',[AuthinticationController::class,'login']);
 
+Route::middleware('auth:user-api')->group(function(){
 
-Route::middleware('auth.guard:user-api')->group(function(){
-    Route::post('login',[AuthinticationController::class,'login']);
-
-    Route::post('logout',[AuthinticationController::class,'logout']);
+    Route::post('user/logout',[AuthinticationController::class,'logout']);
 
 });
 

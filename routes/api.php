@@ -14,8 +14,8 @@ use App\Http\Controllers\Api\CategoryContoller;
 use App\Http\Controllers\Api\PackingController;
 use App\Http\Controllers\Api\ProductController;
 use App\Http\Controllers\Api\ShredderController;
-//use App\Http\Controllers\Api\User\AuthinticationController as UserAuth;
-use App\Http\Controllers\Admin\AuthinticationController ;
+use App\Http\Controllers\Api\Admin\AuthinticationController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -91,11 +91,10 @@ Route::prefix('branch')->group(function(){
 
 });
 
-Route::post('register',[AuthinticationController::class,'register'])->name('admin/register');
-
+Route::post('admin/register',[AuthinticationController::class,'register'])->name('admin/register');
+Route::post('admin/login',[AuthinticationController::class,'login']);
 Route::middleware('auth:admin')->group(function(){
-    Route::post('admin/login',[AuthinticationController::class,'login']);
-    Route::post('logout',[AuthinticationController::class,'logout']);
+    Route::post('admin/logout',[AuthinticationController::class,'logout']);
 });
 
 

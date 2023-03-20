@@ -15,11 +15,9 @@ class AuthinticationController extends Controller
     public function register(Request $request){
         $rules =[
 
+                'name'=>'required|string',
                 'phone'=>'required|string',
-                'email'=>'required|string|email|unique:users|max:200',
-                'password'=>'required|strin|min:6',
-                'city'=>'required|string|exist:users',
-                'district'=>'required|string'
+
 
             ];
             $validated = Validator::make($request->all(),$rules);
@@ -28,12 +26,14 @@ class AuthinticationController extends Controller
                     );
             }
 
+
         $admin =Admin::create($request->all());
-        $token = $admin->createToken();
+
         return response()->json([
             'admin' => $admin ,
-            'token'=>$token
+            // 'token'=>$token
         ]);
+
     }
 
     public function login(Request $request)
@@ -41,7 +41,7 @@ class AuthinticationController extends Controller
 
         try {
             $rules = [
-                "name" => "required",
+
                 "phone" => "required"
 
             ];
@@ -55,15 +55,15 @@ class AuthinticationController extends Controller
 
             //login
 
-            $credentials = $request->only(['name', 'phone']);
+            $credentials = $request->only(['phone']);
 
-            $token = Auth::guard('admin-api')->attempt($credentials);
+            $token = Auth::guard('admin')->attempt($credentials);
 
             if (!$token)
                 return $this->returnError('E001', 'بيانات الدخول غير صحيحة');
 
-            $admin = Auth::guard('admin-api')->user();
-            $admin->api_token = $token;
+            $admin = Auth::guard('admin')->user();
+            $token = $admin->createToken('passport_token')->accessToken;
             //return token
             return $this->returnData('admin', $admin);
 
